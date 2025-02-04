@@ -68,10 +68,10 @@ jobs:
           #   os: ubuntu-latest
           #   targets: aab
 
-          # - platform: windows
-          #   os: windows-2019
-          #   aarch: amd64
-          #   targets: exe,msix
+          - platform: windows
+            os: windows-2019
+            aarch: amd64
+            targets: exe,msix
 
           - platform: linux
             os: ubuntu-22.04
