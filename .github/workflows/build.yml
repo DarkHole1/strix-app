@@ -19,15 +19,15 @@ env:
   NDK_VERSION: r26d
   UPLOAD_ARTIFACT: "${{ inputs.upload-artifact }}"
   TAG_NAME: "${{ inputs.tag-name }}"
-  TARGET_NAME_AppImage: "Hiddify-Linux-x64"
-  TARGET_NAME_deb: "Hiddify-Debian-x64"
-  TARGET_NAME_rpm: "Hiddify-rpm-x64"
-  TARGET_NAME_apk: "Hiddify-Android"
-  TARGET_NAME_aab: "Hiddify-Android"
-  #TARGET_NAME_exe: "Hiddify-Windows-x64"
-  TARGET_NAME_dmg: "Hiddify-MacOS"
-  TARGET_NAME_pkg: "Hiddify-MacOS-Installer"
-  TARGET_NAME_ipa: "Hiddify-iOS"
+  TARGET_NAME_AppImage: "Strix-Linux-x64"
+  TARGET_NAME_deb: "Strix-Debian-x64"
+  TARGET_NAME_rpm: "Strix-rpm-x64"
+  TARGET_NAME_apk: "Strix-Android"
+  TARGET_NAME_aab: "Strix-Android"
+  #TARGET_NAME_exe: "Strix-Windows-x64"
+  TARGET_NAME_dmg: "Strix-MacOS"
+  TARGET_NAME_pkg: "Strix-MacOS-Installer"
+  TARGET_NAME_ipa: "Strix-iOS"
   
 
 jobs:

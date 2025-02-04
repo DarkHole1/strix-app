@@ -1,15 +1,15 @@
 abstract class Constants {
-  static const appName = "Hiddify";
-  static const githubUrl = "https://github.com/hiddify/hiddify-next";
+  static const appName = "Strix";
+  static const githubUrl = "https://github.com/DarkHole1/strix-app";
   static const githubReleasesApiUrl =
-      "https://api.github.com/repos/hiddify/hiddify-next/releases";
+      "https://github.com/DarkHole1/strix-app/releases";
   static const githubLatestReleaseUrl =
-      "https://github.com/hiddify/hiddify-next/releases/latest";
+      "https://github.com/DarkHole1/strix-app/releases/latest";
   static const appCastUrl =
-      "https://raw.githubusercontent.com/hiddify/hiddify-next/main/appcast.xml";
-  static const telegramChannelUrl = "https://t.me/hiddify";
-  static const privacyPolicyUrl = "https://hiddify.com/privacy-policy/";
-  static const termsAndConditionsUrl = "https://hiddify.com/terms/";
+      "https://raw.githubusercontent.com/DarkHole1/strix-app/main/appcast.xml";
+  static const telegramChannelUrl = "https://t.me/strix";
+  static const privacyPolicyUrl = "https://strix.com/privacy-policy/";
+  static const termsAndConditionsUrl = "https://strix.com/terms/";
   static const cfWarpPrivacyPolicy =
       "https://www.cloudflare.com/application/privacypolicy/";
   static const cfWarpTermsOfService =
