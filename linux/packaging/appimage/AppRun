@@ -7,12 +7,12 @@ export LD_LIBRARY_PATH=usr/lib
 show_help() {
 cat << EOF
 Usage: ${0##*/} ...
-start Hiddify or HiddifyCli, when no parameter is given, Hiddify is executed.
+start Strix or StrixCli, when no parameter is given, Strix is executed.
     -v              show version
 EOF
 }
 show_version() {
-    printf "Hiddify version "
+    printf "Strix version "
     jq .version <./data/flutter_assets/version.json
 }
 # Initialize variables:
@@ -24,14 +24,14 @@ OPTIND=1
 
 # if no arg is provided, execute hiddify app
 if [[ $# == 0 ]];then 
-    exec ./hiddify
+    exec ./strix
 else
 
 # processing arguments
 
     case $1 in
-        HiddifyCli)  
-            exec ./HiddifyCli ${@:3}
+        StrixCli)  
+            exec ./StrixCli ${@:3}
             exit 0
             ;;
         h)
