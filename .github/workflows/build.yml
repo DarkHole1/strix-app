@@ -60,9 +60,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # - platform: android-apk
-          #   os: ubuntu-latest
-          #   targets: apk
+          - platform: android-apk
+            os: ubuntu-latest
+            targets: apk
 
           # - platform: android-aab
           #   os: ubuntu-latest
@@ -122,26 +122,26 @@ jobs:
           cache: true
 
       
-      # - name: Setup Java
-      #   if: startsWith(matrix.platform,'android')
-      #   uses: actions/setup-java@v4
-      #   with:
-      #     distribution: 'zulu'
-      #     java-version: 17
-      # - name: Setup NDK
-      #   if: startsWith(matrix.platform,'android')
-      #   uses: nttld/setup-ndk@v1
-      #   id: setup-ndk
-      #   with:
-      #     ndk-version: ${{ env.NDK_VERSION }}
-      #     add-to-path: true
-      #     link-to-sdk: true
+      - name: Setup Java
+        if: startsWith(matrix.platform,'android')
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: 17
+      - name: Setup NDK
+        if: startsWith(matrix.platform,'android')
+        uses: nttld/setup-ndk@v1
+        id: setup-ndk
+        with:
+          ndk-version: ${{ env.NDK_VERSION }}
+          add-to-path: true
+          link-to-sdk: true
 
-      # - name: Setup Gradle 8.1
-      #   if: startsWith(matrix.platform,'android')
-      #   uses: gradle/actions/setup-gradle@v3
-      #   with:
-      #     gradle-version: 7.5
+      - name: Setup Gradle 8.1
+        if: startsWith(matrix.platform,'android')
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: 7.5
       - name: Setup dependencies
         run: |
           make ${{ matrix.platform }}-install-dependencies
@@ -216,15 +216,15 @@ jobs:
       
 
               
-      # - name: Copy to out Android APK
-      #   if: matrix.platform == 'android-apk'
-      #   run: |
-      #     mkdir out
-      #     ls -R ./build/app/outputs
-      #     cp ./build/app/outputs/flutter-apk/*arm64-v8a*.apk out/${TARGET_NAME_apk}-arm64.apk || echo "no arm64 apk"
-      #     cp ./build/app/outputs/flutter-apk/*armeabi-v7a*.apk out/${TARGET_NAME_apk}-arm7.apk || echo "no arm7 apk"
-      #     cp ./build/app/outputs/flutter-apk/*x86_64*.apk out/${TARGET_NAME_apk}-x86_64.apk || echo "no x64 apk"
-      #     cp ./build/app/outputs/flutter-apk/app-release.apk out/${TARGET_NAME_apk}-universal.apk || echo "no universal apk"
+      - name: Copy to out Android APK
+        if: matrix.platform == 'android-apk'
+        run: |
+          mkdir out
+          ls -R ./build/app/outputs
+          cp ./build/app/outputs/flutter-apk/*arm64-v8a*.apk out/${TARGET_NAME_apk}-arm64.apk || echo "no arm64 apk"
+          cp ./build/app/outputs/flutter-apk/*armeabi-v7a*.apk out/${TARGET_NAME_apk}-arm7.apk || echo "no arm7 apk"
+          cp ./build/app/outputs/flutter-apk/*x86_64*.apk out/${TARGET_NAME_apk}-x86_64.apk || echo "no x64 apk"
+          cp ./build/app/outputs/flutter-apk/app-release.apk out/${TARGET_NAME_apk}-universal.apk || echo "no universal apk"
 
       # - name: Copy to out Android AAB
       #   if: matrix.platform == 'android-aab'
